@@ -1,4 +1,6 @@
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.PriorityQueue;
 
 public class LongestSubArrayWithSumK {
 
@@ -35,6 +37,14 @@ public class LongestSubArrayWithSumK {
                     maxLen = i - map.get(sum - k);
             }
         }
+
+
+        PriorityQueue<Integer> q = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return 0;
+            }
+        });
 
         return maxLen;
     }
